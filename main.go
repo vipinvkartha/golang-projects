@@ -102,6 +102,7 @@ func updateEmployee(c *gin.Context) {
 		c.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
+	db.Save(&employee)
 
 	c.JSON(200, employee)
 }
